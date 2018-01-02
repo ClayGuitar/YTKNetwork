@@ -139,6 +139,7 @@
     AFHTTPRequestSerializer *requestSerializer = nil;
     if (request.requestSerializerType == YTKRequestSerializerTypeHTTP) {
         requestSerializer = [AFHTTPRequestSerializer serializer];
+        requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     } else if (request.requestSerializerType == YTKRequestSerializerTypeJSON) {
         requestSerializer = [AFJSONRequestSerializer serializer];
     }
